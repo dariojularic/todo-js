@@ -14,7 +14,11 @@ class Todo {
   }
 
   toggleIsDone() {
-
+    if (this.done === false) {
+      this.done = true;
+    } else {
+      this.done = false;
+    }
   }
 
 }
@@ -49,7 +53,7 @@ class TodoManager {
                       <p>${todoTask.text}</p>
                       <div class="buttons">
                         <button class="delete-btn" data-id="${todoTask.id}">Delete</button>
-                        <button class="is-done" data-id="${todoTask.id}>Done</button>
+                        <button class="is-done" data-id="${todoTask.id}">Done</button>
                       </div>  
                     </div>`;
       todoList.insertAdjacentHTML("afterbegin", html)
@@ -74,13 +78,16 @@ form.addEventListener("submit", (event) => {
 
 todoList.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete-btn")) {
-    // console.log("todos array", todoList1.todos)
     todoList1.deleteTodo(event.target.getAttribute("data-id"))
     todoList1.renderTodos()
-    // console.log("todos array", todoList1.todos)
   }
+
   if (event.target.classList.contains("is-done")) {
 
+    console.log(todoList1.todos.find(todo => todo.id === event.target.getAttribute("data-id")))
+    const todo = todoList1.todos.find(todo => todo.id === event.target.getAttribute("data-id"))
+    todo.toggleIsDone()
+    console.log(todo)
   }
 })
 
