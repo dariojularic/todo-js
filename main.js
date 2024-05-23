@@ -12,6 +12,9 @@ class Todo {
       this.text = text;
   }
 
+  changeColor() {
+    console.log(this)
+  }
   // metoda changeColor random background color
 
 }
@@ -58,6 +61,7 @@ form.addEventListener("submit", (event) => {
     todoList.innerHTML = "";
     todoList1.renderTodos()
     inputText.value = "";
+    todo.changeColor()
   }
 })
 
