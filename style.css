@@ -1,0 +1,19 @@
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.todo {
+  border: 1px solid gray;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  margin-top: 16px;
+}
