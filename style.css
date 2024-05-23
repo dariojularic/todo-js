@@ -11,9 +11,33 @@
   height: 500px;
   width: 500px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
 }
 
 form {
   margin-top: 16px;
+}
+
+.todo-task {
+  height: 80px;
+  width: 80%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.todo-list {
+  border: 1px solid blue;
+  height: 80%;
+  width: 90%;
+  margin-top: 16px;
+}
+
+.remove-task {
+  width: 80px;
+  height: 24px;
 }
