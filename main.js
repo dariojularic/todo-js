@@ -62,7 +62,6 @@ form.addEventListener("submit", (event) => {
   // razlika izmedu == i ===??
   if (!inputText.value == "") {
     const todo = new Todo(inputText.value)
-    console.log(todo)
     todoList1.addTodo(todo)
     todoList.innerHTML = "";
     todoList1.renderTodos()
@@ -77,11 +76,9 @@ todoList.addEventListener("click", (event) => {
   }
 
   if (event.target.classList.contains("is-done")) {
-
-    // console.log(todoList1.todos.find(todo => todo.id === event.target.getAttribute("data-id")))
     const todo = todoList1.todos.find(todo => todo.id === event.target.getAttribute("data-id"))
     todo.toggleIsDone()
-    console.log(todo)
+    todo.done ? event.target.style.backgroundColor = "green" : event.target.style.backgroundColor = ""; 
   }
 })
 
