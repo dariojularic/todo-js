@@ -14,11 +14,7 @@ class Todo {
   }
 
   toggleIsDone() {
-    if (this.done === false) {
-      this.done = true;
-    } else {
-      this.done = false;
-    }
+    this.done ? this.done = false : this.done = true;
   }
 
 }
