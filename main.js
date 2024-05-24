@@ -35,15 +35,9 @@ class TodoManager {
   }
 
   deleteTodo(todoId) {
-    // const newTodos = this.todos.filter(todo => todo.id !== todoId)
-    // this.todos = newTodos;
     this.todos = this.todos.filter((todoTask) => {
       return todoTask.id !== todoId
-      // console.log("id od todotask", todoTask.id)
-      // console.log("id koji zelim izbrisat", todoId)
-      // console.log(this.todos)
     })
-    console.log(this.todos)
   }
 
   renderTodos() {
@@ -84,7 +78,7 @@ todoList.addEventListener("click", (event) => {
 
   if (event.target.classList.contains("is-done")) {
 
-    console.log(todoList1.todos.find(todo => todo.id === event.target.getAttribute("data-id")))
+    // console.log(todoList1.todos.find(todo => todo.id === event.target.getAttribute("data-id")))
     const todo = todoList1.todos.find(todo => todo.id === event.target.getAttribute("data-id"))
     todo.toggleIsDone()
     console.log(todo)
