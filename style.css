@@ -73,3 +73,16 @@ button {
   align-self: flex-start;
   gap: 8px;
 }
+
+.input-field {
+  height: 24px;
+  width: 320px;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  font-size: 20px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 8px;
+  background-color: #00abe3;
+}
