@@ -7,11 +7,9 @@
 
 
 .todo {
-  border: 1px solid gray;
   height: 500px;
   width: 500px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 }
@@ -21,24 +19,46 @@ form {
 }
 
 .todo-task {
-  height: 80px;
-  width: 80%;
-  border: 1px solid rgb(84, 84, 84);
+  height: fit-content;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-
+  background-color: rgb(221, 221, 221);
+  margin-top: 8px;
+  border-radius: 8px;
+  /* overflow: auto; */
+  /* white-space: pre-wrap; */
+  /* flex-wrap: wrap; */
+  word-wrap: break-word;
 }
 
 .todo-list {
-  border: 1px solid blue;
   height: 80%;
   width: 90%;
   margin-top: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 .remove-task {
   width: 80px;
   height: 24px;
+}
+
+p {
+  /* text-wrap: ; */
+  white-space: normal;
+  margin: 4px;
+  width: fit-content;
+  hyphens: auto;
+  word-break: break-word;
+  
+}
+
+.done {
+  background-color: green;
 }

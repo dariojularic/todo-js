@@ -4,19 +4,21 @@ const form = document.querySelector("form")
 const inputText = document.querySelector("#todotext");
 const todoList = document.querySelector(".todo-list");
 const deleteBtn = document.querySelector(".delete-btn");
-const doneBtn = document.querySelector(".is-done"); 
+
+
+// text mi se previse rasiri
 
 class Todo {
   constructor(text) {
-      this.id = self.crypto.randomUUID();
-      this.text = text;
-      this.done = false;
+    this.id = self.crypto.randomUUID();
+    this.text = text;
+    this.done = false;
   }
-
+  
   toggleIsDone() {
-    this.done ? this.done = false : this.done = true;
+    this.done = !this.done
   }
-
+  
 }
 
 class TodoManager {
@@ -29,7 +31,7 @@ class TodoManager {
   addTodo(todoTask) {
     this.todos.push(todoTask)
   }
-
+  
   deleteTodo(todoId) {
     this.todos = this.todos.filter((todoTask) => {
       return todoTask.id !== todoId
@@ -43,10 +45,10 @@ class TodoManager {
                       <p>${todoTask.text}</p>
                       <div class="buttons">
                         <button class="delete-btn" data-id="${todoTask.id}">Delete</button>
-                        <button class="is-done" data-id="${todoTask.id}">Done</button>
+                        <button class="is-done ${todoTask.done ? "done" : ""}" data-id="${todoTask.id}">Done</button>
                       </div>  
                     </div>`;
-      todoList.insertAdjacentHTML("afterbegin", html)
+        todoList.insertAdjacentHTML("afterbegin", html)
     })
   }
 }
